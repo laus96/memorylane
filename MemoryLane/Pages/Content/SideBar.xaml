@@ -1,0 +1,17 @@
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MemoryLane.Pages.Content.Sidebar"
+    BackgroundColor="#1E1E1E"
+    Padding="20">
+
+    <VerticalStackLayout Spacing="20">
+        <Label Text="MemoryLane" FontSize="24" TextColor="White" FontAttributes="Bold"/>
+
+        <Button Text="Home" CommandParameter="Home" Clicked="OnNavigateClicked"/>
+        <Button Text="Organizer" CommandParameter="Organize" Clicked="OnNavigateClicked"/>
+        <Button Text="Duplicates" CommandParameter="Duplicates" Clicked="OnNavigateClicked"/>
+        <Button Text="Profiles" CommandParameter="Profiles" Clicked="OnNavigateClicked"/>
+        <Button Text="Settings" CommandParameter="Settings" Clicked="OnNavigateClicked"/>
+    </VerticalStackLayout>
+</ContentView>
