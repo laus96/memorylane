@@ -1,9 +1,98 @@
 <ContentView
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MemoryLane.Pages.HomePage">
+    x:Class="MemoryLane.Pages.HomePage"
+    BackgroundColor="White">
 
-    <VerticalStackLayout Padding="30">
-        <Label Text="🏠 Estás en la Home" FontSize="30" TextColor="DarkBlue"/>
-    </VerticalStackLayout>
+    <Grid ColumnDefinitions="250, *">
+        <!-- Sidebar -->
+        <StackLayout BackgroundColor="{DynamicResource SideBarColor}" Padding="20" Spacing="30">
+            <Image Source="logo_texto.png" HeightRequest="40" Aspect="AspectFit" Margin="0,10"/>
+
+            <StackLayout Spacing="25">
+                <Button Text="Inicio" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource Text}" CornerRadius="15"/>
+                <Button Text="Organizar" BackgroundColor="{StaticResource BackgroundTextDisabled}" TextColor="{StaticResource TextDisabled}"/>
+                <Button Text="Duplicados" BackgroundColor="{StaticResource BackgroundTextDisabled}" TextColor="{StaticResource TextDisabled}"/>
+                <Button Text="Perfiles" BackgroundColor="{StaticResource BackgroundTextDisabled}" TextColor="{StaticResource TextDisabled}"/>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Button Text="Ajustes" BackgroundColor="{StaticResource BackgroundTextDisabled}" TextColor="{StaticResource TextDisabled}"/>
+            </StackLayout>
+        </StackLayout>
+        <!-- /Sidebar -->
+
+        <!-- Main Content -->
+        <ScrollView Grid.Column="1">
+            <VerticalStackLayout Padding="20" Spacing="25">
+
+                <!-- Header -->
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                    <VerticalStackLayout>
+                        <Label Text="Cada archivo tiene su lugar." FontSize="24" FontAttributes="Bold"/>
+                        <Label Text="Vamos a encontrarlo." FontSize="14" TextColor="Gray"/>
+                    </VerticalStackLayout>
+
+                    <HorizontalStackLayout Spacing="15">
+                        <Image Source="bell_icon.png" WidthRequest="24" HeightRequest="24"/>
+                        <Image Source="moon_icon.png" WidthRequest="24" HeightRequest="24"/>
+                    </HorizontalStackLayout>
+                </HorizontalStackLayout>
+
+                <!-- Feature Buttons -->
+                <FlexLayout Wrap="Wrap" Direction="Row" JustifyContent="Start" AlignItems="Start" Margin="0,10">
+                    <Frame BackgroundColor="#5C8DF6" Padding="15" CornerRadius="15" WidthRequest="200" HeightRequest="120" Margin="10">
+                        <VerticalStackLayout Spacing="10">
+                            <Image Source="gallery_icon.png" HeightRequest="30"/>
+                            <Label Text="Galería inteligente" TextColor="White" FontAttributes="Bold"/>
+                            <Label Text="Pon orden a tu biblioteca multimedia" FontSize="12" TextColor="White"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="#1CD7C1" Padding="15" CornerRadius="15" WidthRequest="200" HeightRequest="120" Margin="10">
+                        <VerticalStackLayout Spacing="10">
+                            <Image Source="doc_icon.png" HeightRequest="30"/>
+                            <Label Text="Gestión documental" TextColor="Black" FontAttributes="Bold"/>
+                            <Label Text="Acceso rápido y ordenado." FontSize="12"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="#FFB020" Padding="15" CornerRadius="15" WidthRequest="200" HeightRequest="120" Margin="10">
+                        <VerticalStackLayout Spacing="10">
+                            <Image Source="duplicate_icon.png" HeightRequest="30"/>
+                            <Label Text="Revisión de copias" TextColor="Black" FontAttributes="Bold"/>
+                            <Label Text="Recupera espacio en segundos." FontSize="12"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="#1E2238" Padding="20" CornerRadius="20" WidthRequest="420" HeightRequest="120" Margin="10">
+                        <VerticalStackLayout>
+                            <Label Text="Análisis Inteligente" TextColor="White" FontAttributes="Bold"/>
+                            <Label Text="Explora y analiza tu contenido para organizar mejor." FontSize="12" TextColor="White"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </FlexLayout>
+
+                <!-- Pie Chart & Summary -->
+                <Frame BackgroundColor="White" Padding="20" CornerRadius="15" Margin="10,0">
+                    <VerticalStackLayout>
+                        <Image Source="pie_chart_placeholder.png" HeightRequest="150"/>
+
+                        <StackLayout Spacing="8" Margin="0,10">
+                            <Label Text="Galería - 37%" TextColor="#5C8DF6"/>
+                            <Label Text="Documentos - 21%" TextColor="#1CD7C1"/>
+                            <Label Text="Duplicados - 35%" TextColor="#FFB020"/>
+                            <Label Text="Otros - 7%" TextColor="#1E2238"/>
+                        </StackLayout>
+
+                        <Label Text="Último uso: 13 de mayo de 2025, 19:42"
+                               FontSize="12"
+                               TextColor="Gray"
+                               HorizontalOptions="End"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentView>

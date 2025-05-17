@@ -10,6 +10,6 @@
         <controls:Sidebar x:Name="SidebarPanel" />
 
         <!-- Contenido dinámico -->
-        <ContentView x:Name="ContentArea" Grid.Column="1"/>
+        <ContentView x:Name="ContentArea" Grid.Column="1" BackgroundColor="{DynamicResource AppBackgroundColor}"/>
     </Grid>
 </ContentPage>

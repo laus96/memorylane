@@ -2,16 +2,17 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MemoryLane.Pages.Content.Sidebar"
-    BackgroundColor="#1E1E1E"
+    BackgroundColor="{DynamicResource SideBarColor}"
     Padding="20">
 
-    <VerticalStackLayout Spacing="20">
-        <Label Text="MemoryLane" FontSize="24" TextColor="White" FontAttributes="Bold"/>
+    <StackLayout Spacing="30" VerticalOptions="Start" Margin="0,40">
+
+        <Image Source="logo_texto.png" HeightRequest="40" Aspect="AspectFit" Margin="0,20"/>
 
         <Button Text="Home" CommandParameter="Home" Clicked="OnNavigateClicked"/>
         <Button Text="Organizer" CommandParameter="Organize" Clicked="OnNavigateClicked"/>
         <Button Text="Duplicates" CommandParameter="Duplicates" Clicked="OnNavigateClicked"/>
         <Button Text="Profiles" CommandParameter="Profiles" Clicked="OnNavigateClicked"/>
         <Button Text="Settings" CommandParameter="Settings" Clicked="OnNavigateClicked"/>
-    </VerticalStackLayout>
+    </StackLayout>
 </ContentView>
